@@ -7,9 +7,10 @@ void teleopDrive() {
 }
 
 void shooter() {
-    if (master.get_digital(DIGITAL_L1)) {
+    if ((master.get_digital(DIGITAL_L1)) && (master.get_digital(DIGITAL_R1)))
+
+
         
 
 
     }
-}

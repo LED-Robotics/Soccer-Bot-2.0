@@ -20,8 +20,8 @@ std::shared_ptr<ChassisModel> chassisModel = chassis->getModel();
 
 pros::Controller master{CONTROLLER_MASTER};
 
-pros::Motor leftFlywheel{};
-
+pros::Motor leftFlywheel{12};
+pros::Motor rightFlywheel{2};
 
 
 
