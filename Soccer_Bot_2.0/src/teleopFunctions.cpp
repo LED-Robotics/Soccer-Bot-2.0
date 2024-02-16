@@ -2,7 +2,7 @@
 #include "main.h"
 void teleopDrive() {
 
-    chassisModel->arcade(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_RIGHT_X), .05);
+    chassisModel->arcade(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_RIGHT_X), .50);
     //Pineapple program
 }
 
