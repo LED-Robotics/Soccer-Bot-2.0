@@ -4,3 +4,5 @@
 void teleopDrive();
 
 void shooter();
+
+void intake();

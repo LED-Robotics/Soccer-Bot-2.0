@@ -24,8 +24,4 @@ pros::Motor leftFlywheel{12};
 pros::Motor rightFlywheel{2};
 
 
-
-
-
-
-
+okapi::ADIMotor29 rightIntake{'A'};

@@ -72,5 +72,7 @@ void autonomous() {}
 void opcontrol() {
 	while (true) {
 		teleopDrive();
+		shooter();
+		intake();
 	}
 }
