@@ -7,34 +7,42 @@ void teleopDrive() {
 }
 
 void shooter() {
-    while (true) {
+    // while (true) {
     if ((master.get_digital(DIGITAL_L1)) && (master.get_digital(DIGITAL_R1))){
-        leftFlywheel.move(127.0);
-        rightFlywheel.move(-127.0);}
+        leftFlywheel.move(-127.0);
+        rightFlywheel.move(127.0);}
     else if ((master.get_digital(DIGITAL_L1))){
-        leftFlywheel.move(127.0);
-        rightFlywheel.move(-127.0 * 0.15);}
+        leftFlywheel.move(-127.0);
+        rightFlywheel.move(127.0 * 0.35);}
     else if ((master.get_digital(DIGITAL_R1))){
-        rightFlywheel.move(-127.0 * -0.5);
-        leftFlywheel.move(127.0);
+        rightFlywheel.move(127.0 * 0.35);
+        leftFlywheel.move(-127.0);
     }
     else {
         leftFlywheel.move(0.0);
         rightFlywheel.move(0.0);
     }
-    }
+    // }
 }
 void intake() {
     if ((master.get_digital(DIGITAL_A))){
-        rightIntake.moveVoltage(5);
-        
+        daMotor.set_value(-127);
+        daMotor2.set_value(-127);    
+        }
+    else {
+        daMotor.set_value(0);
+        daMotor2.set_value(0);
     }
+
+        
+        
+    
 
 }
 
     
 
-        //mEOW UWU *SNUG 3699 GLES* RAWR~!
+    
 
 
     

@@ -8,7 +8,8 @@ extern pros::Motor rightFlywheel;
 
 extern pros::Controller master;
 
-extern okapi::ADIMotor rightIntake;
+extern pros::ADIMotor daMotor;
+extern pros::ADIMotor daMotor2;
 
 
 

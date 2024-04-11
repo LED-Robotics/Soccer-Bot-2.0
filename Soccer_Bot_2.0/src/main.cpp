@@ -74,5 +74,6 @@ void opcontrol() {
 		teleopDrive();
 		shooter();
 		intake();
+		
 	}
 }
