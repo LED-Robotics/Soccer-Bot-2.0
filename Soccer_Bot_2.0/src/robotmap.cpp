@@ -27,3 +27,4 @@ pros::Motor rightFlywheel{2};
 
 pros::ADIMotor daMotor('A');
 pros::ADIMotor daMotor2('B');
+pros::ADIMotor damotor3('C');

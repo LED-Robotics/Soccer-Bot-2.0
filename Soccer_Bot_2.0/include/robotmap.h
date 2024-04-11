@@ -10,6 +10,6 @@ extern pros::Controller master;
 
 extern pros::ADIMotor daMotor;
 extern pros::ADIMotor daMotor2;
-
+extern pros::ADIMotor daMotor3;
 
 

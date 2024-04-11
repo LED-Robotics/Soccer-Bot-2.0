@@ -26,6 +26,8 @@ void shooter() {
 }
 void intake() {
     if ((master.get_digital(DIGITAL_A))){
+        
+        
         daMotor.set_value(-127);
         daMotor2.set_value(-127);    
         }
@@ -34,6 +36,11 @@ void intake() {
         daMotor2.set_value(0);
     }
 
+void index() {
+    if ((master.get_digital(DIGITAL_Y))){
+        damotor3.set_value(127);
+    }
+}
         
         
     
