@@ -1,5 +1,5 @@
 #include "robotmap.h"
-#include "main.h"
+
 void teleopDrive() {
 
     chassisModel->arcade(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_RIGHT_X), .05);
@@ -26,30 +26,16 @@ void shooter() {
 }
 void intake() {
     if ((master.get_digital(DIGITAL_A))){
-        
-        
-        daMotor.set_value(-127);
-        daMotor2.set_value(-127);    
-        }
-    else {
-        daMotor.set_value(0);
-        daMotor2.set_value(0);
-    }
+        intakeLeft.set_value(127);
+        intakeRight.set_value(127);
 
-void index() {
-    if ((master.get_digital(DIGITAL_Y))){
-        damotor3.set_value(127);
+        intakeAssistLeft.set_value(127);
+        intakeAssistRight.set_value(127);
+    } else {
+        intakeLeft.set_value(0);
+        intakeRight.set_value(0);
+
+        intakeAssistLeft.set_value(0);
+        intakeAssistRight.set_value(0);
     }
 }
-        
-        
-    
-
-}
-
-    
-
-    
-
-
-    

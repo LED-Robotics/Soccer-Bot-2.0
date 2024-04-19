@@ -19,12 +19,13 @@ ChassisControllerBuilder()
 std::shared_ptr<ChassisModel> chassisModel = chassis->getModel();
 
 pros::Controller master{CONTROLLER_MASTER};
-gligga _GLIBCXX_PACKAGE__GLIBCXX_VERSION
+//gligga _GLIBCXX_PACKAGE__GLIBCXX_VERSION
 
 pros::Motor leftFlywheel{12};
 pros::Motor rightFlywheel{2};
 
 
-pros::ADIMotor daMotor('A');
-pros::ADIMotor daMotor2('B');
-pros::ADIMotor damotor3('C');
+pros::ADIMotor intakeLeft('A');
+pros::ADIMotor intakeRight('B');
+pros::ADIMotor intakeAssistLeft('C');
+pros::ADIMotor intakeAssistRight('H');

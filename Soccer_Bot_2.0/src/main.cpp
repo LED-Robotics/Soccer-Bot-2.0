@@ -1,6 +1,5 @@
 #include "main.h"
 #include "teleopFunctions.h"
-#include "robotmap.h"
 
 /**
  * A callback function for LLEMU's center button.
@@ -74,6 +73,5 @@ void opcontrol() {
 		teleopDrive();
 		shooter();
 		intake();
-		
 	}
 }
