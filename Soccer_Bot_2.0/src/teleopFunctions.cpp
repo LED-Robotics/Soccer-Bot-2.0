@@ -22,20 +22,27 @@ void shooter() {
         leftFlywheel.move(0.0);
         rightFlywheel.move(0.0);
     }
-    // }
+    
 }
+
+bool intakeToggle = false;
 void intake() {
-    if ((master.get_digital(DIGITAL_A))){
+    if (master.get_digital_new_press(DIGITAL_A) && !intakeToggle){
         intakeLeft.set_value(127);
         intakeRight.set_value(127);
 
         intakeAssistLeft.set_value(127);
         intakeAssistRight.set_value(127);
-    } else {
+    } else if (master.get_digital_new_press(DIGITAL_A) && intakeToggle) {
+        intakeToggle = !intakeToggle;
         intakeLeft.set_value(0);
         intakeRight.set_value(0);
 
         intakeAssistLeft.set_value(0);
         intakeAssistRight.set_value(0);
     }
+}
+
+void index() {
+    indexingMotor.set_value(127 * master.get_digital(DIGITAL_B));
 }

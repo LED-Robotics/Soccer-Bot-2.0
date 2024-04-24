@@ -12,3 +12,5 @@ extern pros::ADIMotor intakeLeft;
 extern pros::ADIMotor intakeRight;
 extern pros::ADIMotor intakeAssistLeft;
 extern pros::ADIMotor intakeAssistRight;
+
+extern pros::ADIMotor indexingMotor;
