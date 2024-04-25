@@ -25,9 +25,9 @@ pros::Motor leftFlywheel{12};
 pros::Motor rightFlywheel{2};
 
 
-pros::ADIMotor intakeLeft('A');
-pros::ADIMotor intakeRight('B');
-pros::ADIMotor intakeAssistLeft('C');
-pros::ADIMotor intakeAssistRight('D');
+pros::ADIAnalogOut intakeLeft('A');
+pros::ADIAnalogOut intakeRight('B');
+pros::ADIAnalogOut intakeAssistLeft('C');
+pros::ADIAnalogOut intakeAssistRight('D');
 
-pros::ADIMotor indexingMotor('E');
+pros::ADIAnalogOut indexingMotor('E');

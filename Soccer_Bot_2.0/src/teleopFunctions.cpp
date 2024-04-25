@@ -24,24 +24,43 @@ void shooter() {
     }
     
 }
+// void intake2() {
+//     if (master.get_digital(DIGITAL_Y)){
+//         intakeLeft.set_value(127);
+//     }
 
-bool intakeToggle = false;
-void intake() {
-    if (master.get_digital_new_press(DIGITAL_A) && !intakeToggle){
-        intakeLeft.set_value(127);
-        intakeRight.set_value(127);
+//     else {
+//         intakeLeft.set_value(0);
+//     }
+//     }
 
-        intakeAssistLeft.set_value(127);
-        intakeAssistRight.set_value(127);
-    } else if (master.get_digital_new_press(DIGITAL_A) && intakeToggle) {
-        intakeToggle = !intakeToggle;
-        intakeLeft.set_value(0);
-        intakeRight.set_value(0);
 
-        intakeAssistLeft.set_value(0);
-        intakeAssistRight.set_value(0);
-    }
-}
+ void intake() {
+     if (master.get_digital(DIGITAL_A)){
+         intakeLeft.set_value(127);
+         intakeRight.set_value(127);
+
+     }
+     else {
+    
+         intakeLeft.set_value(0.0);
+         intakeRight.set_value(0.0);
+
+     }
+     }
+    
+    void intakeAssist() {
+     if (master.get_digital(DIGITAL_Y)){
+         intakeAssistLeft.set_value(127);
+         intakeAssistRight.set_value(127);
+     }
+     else {
+    
+         intakeAssistLeft.set_value(0);
+         intakeAssistRight.set_value(0);
+     }
+     }
+
 
 void index() {
     indexingMotor.set_value(127 * master.get_digital(DIGITAL_B));

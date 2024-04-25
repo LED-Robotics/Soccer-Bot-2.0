@@ -8,3 +8,5 @@ void shooter();
 void intake();
 
 void index();
+
+void intakeAssist();
