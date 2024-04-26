@@ -5,8 +5,12 @@ void teleopDrive();
 
 void shooter();
 
-void intake();
+void intakeLeft();
 
 void index();
 
-void intakeAssist();
+void intakeLeftAssist();
+
+void intakeRightAssist();
+
+void intakeRight();

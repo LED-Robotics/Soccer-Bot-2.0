@@ -8,9 +8,9 @@ extern pros::Motor rightFlywheel;
 
 extern pros::Controller master;
 
-extern pros::ADIAnalogOut intakeLeft;
-extern pros::ADIAnalogOut intakeRight;
-extern pros::ADIAnalogOut intakeAssistLeft;
-extern pros::ADIAnalogOut intakeAssistRight;
+extern pros::ADIMotor intakeLeftMotor;
+extern pros::ADIMotor intakeRightMotor;
+extern pros::ADIMotor intakeAssistLeftMotor;
+extern pros::ADIMotor intakeAssistRightMotor;
 
-extern pros::ADIAnalogOut indexingMotor;
+extern pros::ADIMotor indexingMotor;

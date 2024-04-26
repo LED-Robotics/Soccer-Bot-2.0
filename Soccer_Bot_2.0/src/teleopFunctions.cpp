@@ -1,5 +1,7 @@
 #include "robotmap.h"
 
+int intakeLeftOn = false;
+
 void teleopDrive() {
 
     chassisModel->arcade(master.get_analog(ANALOG_LEFT_Y), master.get_analog(ANALOG_RIGHT_X), .05);
@@ -35,33 +37,56 @@ void shooter() {
 //     }
 
 
- void intake() {
+void intakeLeft() {
+     if (master.get_digital(DIGITAL_LEFT)){
+         intakeLeftMotor.set_value(127);
+    }
+     else {
+         intakeLeftMotor.set_value(0.0);
+    }
+}
+
+void intakeLeftAssist() {
+    if (master.get_digital_new_press(DIGITAL_L2)){
+    intakeLeftOn = pros::millis();
+    }
+
+    if(!intakeLeftOn) return;
+    int timePassed = pros::millis() - intakeLeftOn;
+    if(timePassed > 0 && timePassed <= 500) {
+        intakeAssistLeftMotor.set_value(127);
+    } else if(timePassed > 500 && timePassed < 1000) {
+        intakeAssistLeftMotor.set_value(-127);
+    } else if(timePassed >= 1000) {
+        intakeAssistLeftMotor.set_value(0);
+        intakeLeftOn = 0;
+    }
+}
+
+
+void intakeRight() {
      if (master.get_digital(DIGITAL_A)){
-         intakeLeft.set_value(127);
-         intakeRight.set_value(127);
+         intakeRightMotor.set_value(127);
+    }
+     else {
+         intakeRightMotor.set_value(0.0);
+    }
+}
+    
+void intakeRightAssist() {
+     if (master.get_digital(DIGITAL_R2)){
+        
+        intakeAssistRightMotor.set_value(127);
+        intakeAssistRightMotor.set_value(127);
 
+ 
      }
      else {
     
-         intakeLeft.set_value(0.0);
-         intakeRight.set_value(0.0);
+         intakeAssistRightMotor.set_value(0);
 
-     }
-     }
-    
-    void intakeAssist() {
-     if (master.get_digital(DIGITAL_Y)){
-         intakeAssistLeft.set_value(127);
-         intakeAssistRight.set_value(127);
-     }
-     else {
-    
-         intakeAssistLeft.set_value(0);
-         intakeAssistRight.set_value(0);
-     }
-     }
-
-
+    }
+}
 void index() {
-    indexingMotor.set_value(127 * master.get_digital(DIGITAL_B));
+        indexingMotor.set_value(127 * master.get_digital(DIGITAL_B));
 }
